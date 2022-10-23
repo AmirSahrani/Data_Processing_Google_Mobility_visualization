@@ -35,13 +35,16 @@ app.layout = html.Div(children= [
 )
 
 def update_output(value):
+    container = f"Currently looking at {value} data"
+
+
     f = pd.read_parquet("Averages all categories", columns = ["country_region_code", "date", str(value)])
     df = pd.DataFrame(f)
-    container = f"Currently looking at {value} data"
-    fig = px.scatter_geo(df, locations="country_region_code",
+    df['date'] = pd.to_datetime(df['date'])
+    df1 = df.groupby(["country_region_code",pd.Grouper(freq="w",key = "date")]).mean()[value].reset_index()
+    fig = px.scatter_geo(df1, locations= "country_region_code",
                         hover_name="country_region_code", size= value,
-                        animation_frame="date",
-                        animation_group="country_region_code",
+                        animation_frame=df1.date.astype(str),
                         projection="natural earth",
                         template = 'plotly_dark')
     return container, fig
