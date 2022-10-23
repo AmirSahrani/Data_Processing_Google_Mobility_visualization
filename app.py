@@ -47,6 +47,10 @@ def update_output(value):
                         animation_frame=df1.date.astype(str),
                         projection="natural earth",
                         template = 'plotly_dark')
+
+    fig.update_layout(margin=dict(l=0, r=0, t=0, b=0))
+    fig.update_layout(height = 600)
+
     return container, fig
 
 if __name__ == '__main__':
