@@ -15,8 +15,7 @@
     box-shadow: 0 10 25 rgb(255, 255,255); 
     text-align: left;
     border-collapse: separate;
-    font-size: 1 rem; 
-    padding: 1em 1.5em; 
+    font-size: 1 rem;  
     background-color: #2d2c35;
     color: #78c2ad;
     border: 0;
@@ -25,12 +24,12 @@
     box-shadow: 0 10 25 rgb(255, 255,255); 
     text-align: left;
     border-collapse: separate;
-    font-size: 1 rem; 
-    padding: 1em 1.5em; 
+    font-size: 1 rem;  
     background-color: #2d2c35;
     color: #f3969a;
     border: 0;
     }
+
 body{
     margin: 0;
 }
