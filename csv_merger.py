@@ -2,13 +2,14 @@ import pandas as pd
 import os
 cwd = os.getcwd()
 
+# Set your directory containing all the files, make sure not to change the file names from the download
 directory= 'C:\\Users\\amisa\\Documents\\Python\\Final Project'
 os.chdir(directory)
 directory_list = os.listdir(directory)
 csv_list = [x for x in directory_list if x[-4:] == ".csv"]
 
 df = pd.DataFrame(columns=["country_region_code","date","retail_and_recreation_percent_change_from_baseline","grocery_and_pharmacy_percent_change_from_baseline","parks_percent_change_from_baseline","transit_stations_percent_change_from_baseline","workplaces_percent_change_from_baseline","residential_percent_change_from_baseline"])
-
+# Select columns you would like to keep with the columns = [] argument
 for i in csv_list:
     f = pd.read_csv(i, low_memory = False)
     df_new = pd.DataFrame(f,columns=["country_region_code","date","retail_and_recreation_percent_change_from_baseline","grocery_and_pharmacy_percent_change_from_baseline","parks_percent_change_from_baseline","transit_stations_percent_change_from_baseline","workplaces_percent_change_from_baseline","residential_percent_change_from_baseline"])
