@@ -29,7 +29,19 @@
     color: #f3969a;
     border: 0;
     }
-
+.rc-slider-track {
+    position: absolute;
+    left: 0;
+    height: 4px;
+    border-radius: 6px;
+    background-color: #f3969a;
+    }
+.rc-slider-dot-active {
+    border-color: #78c2ad;
+    }
+.rc-slider-handle {  
+    border: solid 2px #78c2ad;
+}
 body{
     margin: 0;
 }

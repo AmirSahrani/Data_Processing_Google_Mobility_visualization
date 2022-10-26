@@ -92,7 +92,7 @@ def update_output(value,selected_date,graph,GDPrange):
         visible=False, resolution=50, showland = True, landcolor = "#fff",
         showocean = True, oceancolor = backgroundcolor)
     if graph == "Line Graph":
-        fig = px.line(Final_df, x="date", y=value, color="Country", labels = {value: "Time spent compared to baseline"})
+        fig = px.line(Final_df, x="date", y=value, color="Country", labels = {value: "Time spent compared to baseline (in percentages)"})
 
     
     fig.update_layout(paper_bgcolor = backgroundcolor, plot_bgcolor = backgroundcolor,
