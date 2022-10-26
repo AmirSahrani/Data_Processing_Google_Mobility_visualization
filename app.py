@@ -43,7 +43,7 @@ app.layout = html.Div(children= [
     dbc.Row(dbc.Col(html.H1(children = "Mobility data throughout a Pandemic", style = {"color": "#78c2ad", "padding": 5}),
                 width={"size":6, "offset": 3})),
     dbc.Row(dbc.Col(html.H5(children= '''
-    Please select a category of location and the year to base the country GDP colors on''', style = {"color": "#f3969a", "padding": 5}),
+    Please select a category of location, the year to base the country GDP colors on and the type of graph you would like to see''', style = {"color": "#f3969a", "padding": 5}),
                 width={"size":5, "offset": 3})),
     dbc.Row([
         dbc.Col(category_dropdown, 
@@ -71,7 +71,7 @@ app.layout = html.Div(children= [
 
 
 def update_output(value,selected_date,graph,GDPrange):
-    container = f"Currently looking at the {value_to_label[value]} data, with the world wide GPD's in {selected_date} for countries with a GDP between {GDPrange[0]} and {GDPrange[1]}"
+    container = f"Currently looking at the {value_to_label[value]} data, with the world wide GPD per capita in {selected_date} for countries with a GDP per capita between {GDPrange[0]} USD and ${GDPrange[1]} USD"
 
 
     f = pd.read_parquet("Averages all categories", columns = ["Country", "date", str(value)])
