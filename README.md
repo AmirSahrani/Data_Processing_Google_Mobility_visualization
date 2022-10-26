@@ -4,4 +4,4 @@ This is my final project for data processing, it is an interactive map containin
 In order to run all the code in the workbook you need a large csv file which I cannot supply via github, 
 you can however download all the data from https://www.kaggle.com/datasets/bigquery/covid19-google-mobility, 
 and run the csv merger on those files. Finally you can run the actual dash app without downloading such large files, 
-you only need the assests folder, the parquet file and app.py
+you only need the assests folder, the parquet file ("Averages all categories") and app.py.
