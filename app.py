@@ -38,7 +38,7 @@ app.layout = html.Div(children= [
     Please select a category of location and the year to base the country GDP colors on''', style = {"color": "#f3969a", "padding": 5}),
                 width={"size":5, "offset": 3})),
     dbc.Row([
-        dbc.Col(html.Div(id = "graph-container", category_dropdown), 
+        dbc.Col(category_dropdown, 
             width = {"size" : 2, "offset" : 3}),
         dbc.Col(date_dropdown, 
             width = {"size" : 2, "offset" : 1})
@@ -79,7 +79,7 @@ def update_output(value,selected_date):
                       margin=dict(l=0, r=0, t=0, b=0), height = 650,
                       font_color = "#ffffff")
     fig.update_geos(
-    visible=False, resolution=50, showland = True, landcolor = "#d8d8d8",
+    visible=False, resolution=50, showland = True, landcolor = "#fff",
     showocean = True, oceancolor = backgroundcolor)
     
     return container, fig
